@@ -13,15 +13,10 @@ export class TabsPage {
   subscription: Subscription;
 
   constructor(private messageService: MessageService) {
-    // subscribe to home component messages
+    // subscribe to tab1 component messages
     this.subscription = this.messageService.getMessage().subscribe(message => {
       this.displayTab2 = message.text === 'true';
     });
-
-    // setInterval(() => {
-    //   console.log('called');
-    //   this.displayTab2 = localStorage.getItem('tab2Displayed') === 'true';
-    // }, 3000);
   }
 
   ngOnDestroy() {
